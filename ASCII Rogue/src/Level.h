@@ -10,7 +10,7 @@
 #include <vector>
 #include <cstring>
 #include <iostream>
-
+#include "Enemy.h"
 #include "Player.h"
 
 using namespace std;
@@ -19,7 +19,7 @@ class Level {
 
 public:
 	Level();
-	void load(string FileName, Player &player);
+	void load(string FileName, Player &player, vector<Enemy> &enemies);
 	void print();
 	void movePlayer(char input, Player &player);
 	char getTile(int x, int y);

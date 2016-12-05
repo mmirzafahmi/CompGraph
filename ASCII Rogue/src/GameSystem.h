@@ -10,6 +10,7 @@
 #include "Player.h"
 #include <cstring>
 #include "Level.h"
+#include "Enemy.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
 private:
 	Player player;
 	Level level;
+	vector<Enemy> enemies;
 };
 
 #endif /* GAMESYSTEM_H_ */

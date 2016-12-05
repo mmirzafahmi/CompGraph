@@ -1,5 +1,5 @@
 /*
- * GameSystem.cpp
+* GameSystem.cpp
  *
  *  Created on: Nov 29, 2016
  *      Author: root
@@ -11,7 +11,7 @@
 
 GameSystem::GameSystem(string levelFileName){
 	player.init(1, 100, 10, 10, 0);
-	level.load(levelFileName, player);
+	level.load(levelFileName, player, enemies);
 	level.print();
 }
 
@@ -19,8 +19,9 @@ void GameSystem::PlayGame(){
 
 	bool isDone = false;
 	while(isDone != true){
-		level.print();
 		PlayerMove();
+		level.print();
+
 	}
 
 }

@@ -15,7 +15,7 @@ Level::Level() {
 
 }
 
-void Level::load(string FileName, Player &player) {
+void Level::load(string FileName, Player &player, vector<Enemy> &enemies) {
 	ifstream file;
 
 	file.open(FileName.c_str());
@@ -40,7 +40,12 @@ void Level::load(string FileName, Player &player) {
 			case '@':
 				player.setPosition(j, i);
 				break;
-
+			case 'S':
+				enemies.push_back(Enemy("snake", tile, 1, 3, 1, 10, 10));
+				break;
+			case 'g':
+				enemies.push_back(Enemy("goblin", tile, 2, 10, 5, 35, 50));
+				break;
 			}
 		}
 	}
