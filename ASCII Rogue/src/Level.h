@@ -10,7 +10,7 @@
 #include <vector>
 #include <cstring>
 #include <iostream>
-#include <cstdio>
+
 #include "Player.h"
 
 using namespace std;
@@ -21,9 +21,9 @@ public:
 	Level();
 	void load(string FileName, Player &player);
 	void print();
-	void movePlayer(string input, Player &player);
+	void movePlayer(char input, Player &player);
 	char getTile(int x, int y);
-	void setTile(int x, int y, string tile);
+	void setTile(int x, int y, char tile);
 
 private:
 

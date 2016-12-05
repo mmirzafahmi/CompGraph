@@ -6,7 +6,7 @@
  */
 
 #include "GameSystem.h"
-#include <ncurses.h>
+#include <cstdio>
 
 
 GameSystem::GameSystem(string levelFileName){
@@ -26,8 +26,8 @@ void GameSystem::PlayGame(){
 }
 
 void GameSystem::PlayerMove(){
-	string input;
+	char input;
 	cout << "Enter a move command (w/a/s/d): ";
-	input = getch();
+	input = getchar();
 	level.movePlayer(input, player);
 }

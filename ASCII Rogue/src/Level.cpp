@@ -8,6 +8,8 @@
 #include "Level.h"
 
 #include <fstream>
+#include <iostream>
+#include <cstdio>
 
 Level::Level() {
 
@@ -29,13 +31,13 @@ void Level::load(string FileName, Player &player) {
 
 	file.close();
 
-	string tile;
+	char tile;
 	for (int i = 0; i < levelData.size(); i++) {
 		for (int j = 0; j < levelData[i].size(); j++) {
 			tile = levelData[i][j];
 
 			switch (tile) {
-			case "@":
+			case '@':
 				player.setPosition(j, i);
 				break;
 
@@ -54,26 +56,26 @@ void Level::print() {
 	printf("\n");
 }
 
-void Level::movePlayer(string input, Player &player) {
+void Level::movePlayer(char input, Player &player) {
 	int playerX;
 	int playerY;
 	player.getPosition(playerX, playerY);
 
 	switch (input) {
-	case "w":
-	case "W":
+	case 'w':
+	case 'W':
 		processMovePlayer(player, playerX, playerY - 1);
 		break;
-	case "s":
-	case "S":
+	case 's':
+	case 'S':
 		processMovePlayer(player, playerX, playerY + 1);
 		break;
-	case "a":
-	case "A":
+	case 'a':
+	case 'A':
 		processMovePlayer(player, playerX - 1, playerY);
 		break;
-	case "d":
-	case "D":
+	case 'd':
+	case 'D':
 		processMovePlayer(player, playerX + 1, playerY);
 		break;
 	default:
@@ -86,7 +88,6 @@ char Level::getTile(int x, int y) {
 	return levelData[y][x];
 }
 
-
 void Level::processMovePlayer(Player &player, int x, int y) {
 	int playerX;
 	int playerY;
@@ -94,18 +95,18 @@ void Level::processMovePlayer(Player &player, int x, int y) {
 
 	char moveTile = getTile(x, y);
 	switch (moveTile) {
-	case "#":
+	case '#':
 		printf("You ran into a wall!\n");
 		break;
-	case ".":
-		player.setPosition(x, y - 1);
-		setTile(playerX, playerY, ".");
-		setTile(x, y, "@");
+	case '.':
+		player.setPosition(x, y);
+		setTile(playerX, playerY, '.');
+		setTile(x, y, '@');
 		break;
 	}
 }
 
-void Level::setTile(int x, int y, string tile) {
+void Level::setTile(int x, int y, char tile) {
 	levelData[y][x] = tile;
 }
 

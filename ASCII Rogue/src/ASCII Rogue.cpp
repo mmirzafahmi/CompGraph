@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
 
-	GameSystem gs("/home/fahmi/Workspace/ASCII Rogue/src/mapPac.txt");
+	GameSystem gs("/home/fahmi/maps.txt");
 	gs.PlayGame();
 
 
