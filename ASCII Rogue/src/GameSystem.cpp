@@ -11,7 +11,7 @@
 
 GameSystem::GameSystem(string levelFileName){
 	player.init(1, 100, 10, 10, 0);
-	level.load(levelFileName, player, enemies);
+	level.load(levelFileName, player);
 	level.print();
 }
 

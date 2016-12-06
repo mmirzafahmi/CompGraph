@@ -15,7 +15,7 @@ Level::Level() {
 
 }
 
-void Level::load(string FileName, Player &player, vector<Enemy> &enemies) {
+void Level::load(string FileName, Player &player) {
 	ifstream file;
 
 	file.open(FileName.c_str());
@@ -45,6 +45,15 @@ void Level::load(string FileName, Player &player, vector<Enemy> &enemies) {
 				break;
 			case 'g':
 				enemies.push_back(Enemy("goblin", tile, 2, 10, 5, 35, 50));
+				break;
+			case 'O':
+				enemies.push_back(Enemy("ogre", tile, 4, 20, 20, 200, 500));
+				break;
+			case 'D':
+				enemies.push_back(Enemy("dragon", tile, 100, 2000, 2000, 2000, 50000000));
+				break;
+			case 'B':
+				enemies.push_back(Enemy("Bandit", tile, 3, 15, 10, 100, 250));
 				break;
 			}
 		}
@@ -101,17 +110,32 @@ void Level::processMovePlayer(Player &player, int x, int y) {
 	char moveTile = getTile(x, y);
 	switch (moveTile) {
 	case '#':
-		printf("You ran into a wall!\n");
 		break;
 	case '.':
 		player.setPosition(x, y);
 		setTile(playerX, playerY, '.');
 		setTile(x, y, '@');
 		break;
+	default:
+		battleMonster(player, x, y);
 	}
 }
 
 void Level::setTile(int x, int y, char tile) {
 	levelData[y][x] = tile;
+}
+
+void Level::battleMonster(Player &player, int targetX, int targetY){
+	int enemyX;
+	int enemyY;
+
+	for(int i = 0; i < enemies.size(); i++){
+		enemies[i].getPosition(enemyX, enemyY);
+		if(targetX == enemyX && targetY == enemyY){
+
+
+			return;
+		}
+	}
 }
 

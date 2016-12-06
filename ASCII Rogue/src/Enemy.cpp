@@ -15,5 +15,17 @@ Enemy::Enemy(string name, char tile, int level, int health, int attack, int defe
 	this->attack = attack;
 	this->defense = defense;
 	this->expValue = expValue;
+	x = 0;
+	y = 0;
 }
 
+void Enemy::setPosition(int x, int y){
+	this->x = x;
+	this->y = y;
+}
+
+void Enemy::getPosition(int &x, int &y){
+	x = this->x;
+	y = this->y;
+
+}

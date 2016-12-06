@@ -15,6 +15,10 @@ class Enemy {
 public:
 	Enemy(string name, char tile, int level, int health, int attack, int defense, int expValue);
 
+	void setPosition(int x, int y);
+
+	void getPosition(int &x, int &y);
+
 private:
 	string name;
 	char tile;
@@ -23,6 +27,8 @@ private:
 	int attack;
 	int defense;
 	int expValue;
+	int x;
+	int y;
 
 };
 

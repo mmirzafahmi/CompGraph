@@ -6,6 +6,10 @@
  */
 
 #include "Player.h"
+#include <random>
+#include <ctime>
+
+using namespace std;
 
 Player::Player(){
 	level = 0;
@@ -34,5 +38,9 @@ void Player::getPosition(int &x, int &y){
 	x = this->x;
 	y = this->y;
 
+}
+
+int Player::attackMove(){
+	static default_random_engine randomEngine(time(NULL));
 }
 

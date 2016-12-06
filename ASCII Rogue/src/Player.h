@@ -8,10 +8,14 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
+
+
 class Player {
 public:
 	Player();
 	void init(int level, int health, int attack, int defense, int experience);
+
+	int attackMove();
 
 	void setPosition(int x, int y);
 
