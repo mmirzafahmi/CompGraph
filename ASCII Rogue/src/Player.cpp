@@ -40,7 +40,7 @@ void Player::getPosition(int &x, int &y){
 
 }
 
-int Player::attackMove(){
-	static default_random_engine randomEngine(time(NULL));
-}
+//int Player::attackMove(){
+//
+//}
 
