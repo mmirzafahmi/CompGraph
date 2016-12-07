@@ -19,6 +19,10 @@ public:
 
 	void setPosition(int x, int y);
 
+	void addExp(int experience);
+
+	int takeDamage(int attack);
+
 	void getPosition(int &x, int &y);
 
 private:

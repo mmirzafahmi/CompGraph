@@ -19,6 +19,12 @@ public:
 
 	void getPosition(int &x, int &y);
 
+	int attackMove();
+
+	string getName(){ return name;}
+
+	int takeDamage(int attack);
+
 private:
 	string name;
 	char tile;
