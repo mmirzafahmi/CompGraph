@@ -13,15 +13,15 @@
 class Player {
 public:
 	Player();
-	void init(int level, int health, int attack, int defense, int experience);
+	void init(int levelInit, int healthInit, int attackInit, int defenseInit, int experienceInit);
 
 	int attackMove();
 
 	void setPosition(int x, int y);
 
-	void addExp(int experience);
+	void addExp(int addExp);
 
-	int takeDamage(int attack);
+	int takeDamage(int atk);
 
 	void getPosition(int &x, int &y);
 

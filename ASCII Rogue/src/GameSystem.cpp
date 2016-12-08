@@ -10,7 +10,7 @@
 
 
 GameSystem::GameSystem(string levelFileName){
-	player.init(1, 100, 10, 10, 0);
+	player.init(1, 100, 20, 10, 0);
 	level.load(levelFileName, player);
 	level.print();
 }
@@ -19,8 +19,9 @@ void GameSystem::PlayGame(){
 
 	bool isDone = false;
 	while(isDone != true){
-		PlayerMove();
 		level.print();
+		PlayerMove();
+		level.updateEnemy(player);
 
 	}
 

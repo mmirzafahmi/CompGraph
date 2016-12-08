@@ -24,10 +24,12 @@ public:
 	void movePlayer(char input, Player &player);
 	char getTile(int x, int y);
 	void setTile(int x, int y, char tile);
+	void updateEnemy(Player &player);
 
 private:
 
 	void processMovePlayer(Player &player, int x, int y);
+	void processMoveEnemy(Player &player, int enemyIndex, int targetX, int targetY);
 	void battleMonster(Player &player, int targetX, int targetY);
 
 private:

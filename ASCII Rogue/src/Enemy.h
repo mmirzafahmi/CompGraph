@@ -13,17 +13,22 @@ using namespace std;
 
 class Enemy {
 public:
-	Enemy(string name, char tile, int level, int health, int attack, int defense, int expValue);
+	Enemy(string nameInit, char tileInit, int levelInit, int healthInit, int attackInit,
+			int defenseInit, int expValueInit);
 
-	void setPosition(int x, int y);
+	void setPosition(int xpos, int ypos);
 
-	void getPosition(int &x, int &y);
+	void getPosition(int &xpos, int &ypos);
+
+	char getTile(){return tile;}
 
 	int attackMove();
 
 	string getName(){ return name;}
 
-	int takeDamage(int attack);
+	int takeDamage(int atk);
+
+	char getMove(int playerX, int playerY);
 
 private:
 	string name;

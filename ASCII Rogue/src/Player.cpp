@@ -21,22 +21,22 @@ Player::Player(){
 	y = 0;
 }
 
-void Player::init(int level, int health, int attack, int defense, int experience){
-	this->level = level;
-	this->health = health;
-	this->attack = attack;
-	this->defense = defense;
-	this->experience = experience;
+void Player::init(int levelInit, int healthInit, int attackInit, int defenseInit, int experienceInit){
+	level = levelInit;
+	health = healthInit;
+	attack = attackInit;
+	defense = defenseInit;
+	experience = experienceInit;
 }
 
-void Player::setPosition(int x, int y){
-	this->x = x;
-	this->y = y;
+void Player::setPosition(int xpos, int ypos){
+	x = xpos;
+	y = ypos;
 }
 
-void Player::getPosition(int &x, int &y){
-	x = this->x;
-	y = this->y;
+void Player::getPosition(int &xpos, int &ypos){
+	xpos = x;
+	ypos = y;
 
 }
 
@@ -46,8 +46,8 @@ int Player::attackMove(){
 	return attackRoll(randomEngine);
 }
 
-void Player::addExp(int experience){
-	experience += experience;
+void Player::addExp(int addExp){
+	experience += addExp;
 
 	while(experience > 50){
 		printf("Leveled up!\n");
@@ -59,10 +59,10 @@ void Player::addExp(int experience){
 	}
 }
 
-int Player::takeDamage(int attack){
-	attack -= defense;
-	if(attack > 0){
-		health -= attack;
+int Player::takeDamage(int atk){
+	atk -= defense;
+	if(atk > 0){
+		health -= atk;
 		if(health <= 0){
 			return 1;
 		}
